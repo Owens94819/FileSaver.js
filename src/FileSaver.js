@@ -1,5 +1,13 @@
 /*
 * FileSaver.js
+* 
+*
+*
+* HEADS UP:
+* @download() - new argument added - argument[3]
+*
+*
+*
 * A saveAs() FileSaver implementation.
 *
 * By Eli Grey, http://eligrey.com
@@ -31,8 +39,16 @@ function bom (blob, opts) {
   return blob
 }
 
-function download (url, name, opts) {
+//new argument added - argument[3]
+function download (url, name, opts, progress) {
   var xhr = new XMLHttpRequest()
+
+xhr.onloadstart = function(e) {
+
+//you can now interact with the xhr events (onprogress,onloadend,onstart).
+progress = (new Function()||progress)(e);
+}
+
   xhr.open('GET', url)
   xhr.responseType = 'blob'
   xhr.onload = function () {
