@@ -45,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - opens up a new popup (tab) directly for the fallback method since the FileReader is async
 - removed the explicitly MSIE [1-9] check
 - Uses new anchor link for each save (might solve multiple download problems)
-
+#133
   [#382]: https://github.com/eligrey/FileSaver.js/issues/382
   [#449]: https://github.com/eligrey/FileSaver.js/issues/449
   [#260]: https://github.com/eligrey/FileSaver.js/issues/260
